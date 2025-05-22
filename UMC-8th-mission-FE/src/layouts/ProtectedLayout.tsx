@@ -4,22 +4,22 @@ import { useLocalStorage } from "../hooks/useLocalStoratge";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const ProtectedLayout=()=>{
-    const {accessToken}=useAuth();
-    const location=useLocation();
+const ProtectedLayout = () => {
+  const { accessToken } = useAuth();
+  const location = useLocation();
 
-    if(!accessToken){
-        return <Navigate to={'/login'} state={{location}} replace />
-    }
-    return(
-        <div className="h-dvh flex flex-col">
-            <Navbar />
-            <main className="flex-1 mt-10">
-                <Outlet />
-            </main>
-            <Footer />
-        </div>
-    )
+  if (!accessToken) {
+    return <Navigate to={"/login"} state={{ location }} replace />;
+  }
+  return (
+    <div className="h-dvh flex flex-col">
+      <Navbar />
+      <main className="flex-1 mt-10">
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 export default ProtectedLayout;

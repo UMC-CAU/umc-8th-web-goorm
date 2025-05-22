@@ -1,4 +1,4 @@
-enum PAGINATION_ORDER{
-    "asc"="asc",
-    "desc"="desc",
+enum PAGINATION_ORDER {
+  "asc" = "asc",
+  "desc" = "desc",
 }
